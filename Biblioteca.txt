@@ -1,0 +1,50 @@
+Biblioteca
+
+CREATE TABLE aluno (
+turma varchar(255),
+dataNascimento date,
+nome varchar(255),
+email varchar(255),
+ra int PRIMARY KEY,
+telefone varchar(15)
+Bibloteca
+)
+
+CREATE TABLE emprestimp_devolucao (
+data_emprestimo date,
+data_devolucao date,
+codEmprestimo int PRIMARY KEY,
+ra int,
+codLivro int,
+codFuncionario int,
+FOREIGN KEY(ra) REFERENCES aluno (ra)
+)
+
+CREATE TABLE bibliotecario (
+email varchar(255),
+nome varchar(255),
+rg varchar(255),
+cpf varchar(255),
+codFuncionario int PRIMARY KEY,
+dataNascimento date,
+telefone varchar(255),
+cep Texto(1),
+uf Texto(1),
+cidade Texto(1),
+bairro Texto(1),
+complemento Texto(1),
+num Texto(1),
+logradouro Texto(1),
+FOREIGN KEY(codFuncionario) REFERENCES bibliotecario (codFuncionario)
+
+
+)
+
+CREATE TABLE livro (
+autor varchar(255),
+titulo  varchar(255),
+genero varchar(255,
+editora varchar(255),
+codLivro int PRIMARY KEY
+FOREIGN KEY(codLivro) REFERENCES livro (codLivro)
+)
